@@ -1,0 +1,152 @@
+.site-header {
+  padding: 1rem 0 0.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  animation: fadeUp 0.5s var(--ease-smooth) both;
+}
+
+/* ─── Nav wrap ──────────────────────────────────────────────────────── */
+.nav-wrap {
+  border-radius: 999px;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  transition:
+    background var(--t-mid) var(--ease-smooth),
+    box-shadow var(--t-mid) var(--ease-smooth),
+    border-color var(--t-mid) var(--ease-smooth),
+    padding var(--t-mid) var(--ease-smooth);
+}
+
+.nav-wrap:hover {
+  background: var(--surface-hover);
+  box-shadow: var(--shadow-light), var(--shadow-float);
+}
+
+/* ─── Brand ─────────────────────────────────────────────────────────── */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: -0.025em;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform var(--t-fast) var(--ease-bounce);
+}
+
+.brand-mark:hover {
+  transform: scale(1.04);
+}
+
+.brand-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  box-shadow: var(--shadow-glow-accent);
+  animation: pulse-glow 3s ease-in-out infinite;
+  flex-shrink: 0;
+  transition: transform var(--t-fast) var(--ease-bounce);
+}
+
+.brand-mark:hover .brand-dot {
+  transform: scale(1.25) rotate(180deg);
+}
+
+/* ─── Nav links ─────────────────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.nav-link {
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  color: var(--text-soft);
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  transition:
+    color var(--t-mid) var(--ease-smooth),
+    background var(--t-mid) var(--ease-smooth),
+    transform var(--t-fast) var(--ease-bounce);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 16px;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 99px;
+  transition: transform var(--t-mid) var(--ease-bounce);
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.active-link {
+  background: var(--surface-strong);
+  color: var(--text-main);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+}
+
+.active-link::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* ─── Theme toggle ──────────────────────────────────────────────────── */
+.theme-toggle {
+  min-width: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.theme-toggle-icon {
+  font-size: 1rem;
+  transition: transform var(--t-mid) var(--ease-bounce);
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(30deg) scale(1.2);
+}
+
+body.dark .theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(-20deg) scale(1.2);
+}
+
+/* ─── Scroll-shrink behavior (JS class) ─────────────────────────────── */
+.nav-wrap.scrolled {
+  padding: 0.55rem 0.8rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}

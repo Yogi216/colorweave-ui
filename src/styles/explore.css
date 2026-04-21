@@ -1,0 +1,179 @@
+/* ─── Explore controls ──────────────────────────────────────────────── */
+.explore-controls {
+  display: grid;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.45s var(--ease-smooth) 0.05s both;
+}
+
+/* ─── Search shell ──────────────────────────────────────────────────── */
+.search-shell {
+  border-radius: 999px;
+  padding: 0.8rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  transition:
+    box-shadow var(--t-mid) var(--ease-smooth),
+    border-color var(--t-mid),
+    transform var(--t-fast) var(--ease-bounce);
+}
+
+.search-shell:focus-within {
+  box-shadow:
+    var(--shadow-light),
+    var(--shadow-float),
+    0 0 0 2px rgba(124, 58, 237, 0.22);
+  border-color: rgba(124, 58, 237, 0.35);
+  transform: translateY(-1px);
+}
+
+.search-icon {
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  flex-shrink: 0;
+  transition:
+    color var(--t-fast),
+    transform var(--t-fast) var(--ease-bounce);
+}
+
+.search-shell:focus-within .search-icon {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+.search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+  transition: color var(--t-mid);
+}
+
+.search-shell:focus-within .search-input::placeholder {
+  color: var(--text-soft);
+}
+
+/* Clear button */
+.search-clear {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--surface-strong);
+  color: var(--text-soft);
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0.7);
+  pointer-events: none;
+  transition:
+    opacity var(--t-fast),
+    transform var(--t-fast) var(--ease-bounce);
+}
+
+.search-shell:focus-within .search-clear,
+.search-shell.has-value .search-clear {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.search-clear:hover {
+  background: rgba(225, 29, 72, 0.15);
+  color: #e11d48;
+}
+
+/* ─── Chip row / Sort row ───────────────────────────────────────────── */
+.chip-row,
+.sort-row {
+  border-radius: 999px;
+  padding: 0.5rem;
+  display: flex;
+  gap: 0.15rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-inset);
+}
+
+.chip-row::-webkit-scrollbar,
+.sort-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* ─── Chips / sort tabs ─────────────────────────────────────────────── */
+.chip,
+.sort-tab {
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  transition:
+    color var(--t-mid),
+    background var(--t-mid),
+    transform var(--t-fast) var(--ease-bounce),
+    box-shadow var(--t-mid);
+}
+
+.chip:hover,
+.sort-tab:hover {
+  color: var(--text-main);
+  transform: scale(1.04);
+}
+
+.chip:active,
+.sort-tab:active {
+  transform: scale(0.96);
+}
+
+.chip-active,
+.sort-active {
+  background: var(--surface-strong);
+  color: var(--text-main);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  font-weight: 600;
+}
+
+/* Animated indicator dot for active chip */
+.chip-active::before,
+.sort-active::before {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gradient-btn);
+  animation: scaleIn 0.25s var(--ease-bounce) both;
+}
+
+/* ─── Results count ─────────────────────────────────────────────────── */
+.results-count {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  padding: 0 0.25rem;
+  transition: opacity var(--t-mid);
+}

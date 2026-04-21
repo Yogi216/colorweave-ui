@@ -1,0 +1,18 @@
+export const categories = [
+  "All",
+  "Color Galaxy",
+  "Petal Soft",
+  "Vintage Soul",
+  "Retro Pop",
+  "Neon Storm",
+  "Flow Shades",
+  "Sunset Glow",
+  "Dark Velvet",
+  "Light Bloom",
+  "Nature Roots",
+  "Ocean Breeze",
+  "Candy Crush",
+  "Minimal Muse",
+  "Warm Horizon",
+  "Cold Crystal",
+];

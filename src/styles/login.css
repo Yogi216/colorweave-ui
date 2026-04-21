@@ -1,0 +1,230 @@
+/* ─── Login shell ───────────────────────────────────────────────────── */
+.login-shell {
+  max-width: 560px;
+  margin: 0 auto;
+  border-radius: 34px;
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-light), var(--shadow-dark), var(--shadow-float);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+  animation: scaleIn 0.5s var(--ease-bounce) both;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative glow */
+.login-shell::before {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(124, 58, 237, 0.12),
+    transparent 65%
+  );
+  pointer-events: none;
+  animation: float 5s ease-in-out infinite;
+}
+
+/* ─── Form layout ───────────────────────────────────────────────────── */
+.login-form {
+  display: grid;
+  gap: 1.1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.login-form label {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.login-form span {
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.01em;
+  color: var(--text-main);
+}
+
+/* ─── Input fields ──────────────────────────────────────────────────── */
+.login-form input {
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface-strong);
+  color: var(--text-main);
+  border-radius: var(--radius-md);
+  padding: 0.95rem 1rem;
+  outline: none;
+  box-shadow: var(--shadow-inset);
+  transition:
+    border-color var(--t-mid),
+    box-shadow var(--t-mid),
+    transform var(--t-fast) var(--ease-bounce),
+    background var(--t-mid);
+}
+
+.login-form input::placeholder {
+  color: var(--text-muted);
+}
+
+.login-form input:focus {
+  border-color: rgba(124, 58, 237, 0.5);
+  box-shadow:
+    var(--shadow-inset),
+    0 0 0 3px rgba(124, 58, 237, 0.12),
+    var(--shadow-glow-accent);
+  transform: translateY(-1px);
+  background: var(--surface-hover);
+}
+
+.login-form input:hover:not(:focus) {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+}
+
+/* Input validation states */
+.login-form input:valid:not(:placeholder-shown) {
+  border-color: rgba(5, 150, 105, 0.45);
+}
+
+.login-form input:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: rgba(225, 29, 72, 0.4);
+}
+
+/* Password visibility toggle wrapper */
+.input-wrap {
+  position: relative;
+}
+
+.input-wrap input {
+  padding-right: 3rem;
+}
+
+.toggle-pw {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  color: var(--text-soft);
+  font-size: 1rem;
+  padding: 0.25rem;
+  border-radius: 6px;
+  transition:
+    color var(--t-fast),
+    transform var(--t-fast) var(--ease-bounce);
+}
+
+.toggle-pw:hover {
+  color: var(--accent);
+  transform: translateY(-50%) scale(1.15);
+}
+
+/* ─── Login button ──────────────────────────────────────────────────── */
+.login-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  position: relative;
+}
+
+/* Loading state */
+.login-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.login-btn.loading::after {
+  content: "";
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin-slow 0.7s linear infinite;
+}
+
+/* ─── Form note ─────────────────────────────────────────────────────── */
+.form-note {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.form-note a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition:
+    color var(--t-fast),
+    text-decoration-color var(--t-fast);
+}
+
+.form-note a:hover {
+  color: var(--accent-3);
+}
+
+/* ─── Divider ───────────────────────────────────────────────────────── */
+.form-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.form-divider::before,
+.form-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-strong);
+}
+
+.form-error {
+  margin: 0;
+  color: #ef4444;
+  font-weight: 600;
+}
+
+/* ─── OAuth buttons ─────────────────────────────────────────────────── */
+.oauth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  background: var(--surface-strong);
+  border: 1px solid var(--border-strong);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  transition:
+    transform var(--t-fast) var(--ease-bounce),
+    box-shadow var(--t-mid),
+    background var(--t-mid);
+}
+
+.oauth-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light), var(--shadow-float);
+  background: var(--surface-hover);
+}
+
+.oauth-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-inset);
+}
