@@ -1,0 +1,78 @@
+/* ─── Empty state ───────────────────────────────────────────────────── */
+.empty-state {
+  border-radius: var(--radius-xl);
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--surface);
+  border: 1px dashed var(--border-strong);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  animation: fadeUp 0.5s var(--ease-smooth) both;
+  transition:
+    border-color var(--t-mid),
+    background var(--t-mid),
+    transform var(--t-mid) var(--ease-smooth);
+}
+
+.empty-state:hover {
+  border-color: rgba(124, 58, 237, 0.25);
+  transform: translateY(-2px);
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: float 4s ease-in-out infinite;
+}
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.empty-state p {
+  max-width: 36ch;
+  margin: 0 auto 1.5rem;
+  line-height: 1.65;
+}
+
+/* ─── Favorites header ──────────────────────────────────────────────── */
+.favorites-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.45s var(--ease-smooth) both;
+}
+
+.favorites-count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: var(--gradient-accent-soft);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+/* ─── Remove-from-favorites animation ──────────────────────────────── */
+.palette-card.removing {
+  animation: card-remove 0.35s var(--ease-smooth) forwards;
+}
+
+@keyframes card-remove {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.88) translateY(8px);
+  }
+}

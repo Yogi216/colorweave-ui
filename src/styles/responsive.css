@@ -1,0 +1,136 @@
+/* ─── Tablet ─────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .palette-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-card,
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-preview {
+    display: none; /* or adapt */
+  }
+
+  .footer-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ─── Mobile ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-wrap {
+    border-radius: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+    width: 100%;
+  }
+
+  .palette-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero-card {
+    padding: 1.5rem;
+    border-radius: 28px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .preview-stack,
+  .palette-colors,
+  .palette-color-block {
+    min-height: 180px;
+  }
+
+  .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .login-shell {
+    border-radius: 28px;
+    padding: 1.5rem;
+  }
+
+  .footer-wrap {
+    gap: 0.75rem;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+  }
+}
+
+/* ─── Small mobile ────────────────────────────────────────────────────── */
+@media (max-width: 580px) {
+  .container {
+    width: min(var(--container), calc(100% - 1rem));
+  }
+
+  .hero-copy h1 {
+    font-size: 2rem;
+  }
+
+  .chip-row,
+  .sort-row {
+    border-radius: 20px;
+  }
+
+  .search-shell {
+    border-radius: 20px;
+  }
+
+  .palette-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .soft-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .not-found-card {
+    padding: 1.5rem;
+    border-radius: 24px;
+  }
+}
+
+/* ─── Reduced motion ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── High contrast ───────────────────────────────────────────────────── */
+@media (forced-colors: active) {
+  .primary-btn,
+  .secondary-btn,
+  .soft-button {
+    border: 2px solid ButtonText;
+  }
+}

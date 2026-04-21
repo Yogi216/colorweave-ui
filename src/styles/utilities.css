@@ -1,0 +1,292 @@
+/* ─── Glass Panel ───────────────────────────────────────────────────── */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+}
+
+.glass-panel-strong {
+  background: var(--surface-strong);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  backdrop-filter: var(--blur-heavy);
+  -webkit-backdrop-filter: var(--blur-heavy);
+}
+
+/* ─── Soft Panel ────────────────────────────────────────────────────── */
+.soft-panel {
+  background: var(--surface-strong);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-inset), var(--shadow-light), var(--shadow-dark);
+  border: 1px solid var(--border);
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────────── */
+.soft-button {
+  border-radius: 999px;
+  background: var(--surface-strong);
+  color: var(--text-main);
+  padding: 0.8rem 1.1rem;
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--t-fast) var(--ease-bounce),
+    box-shadow var(--t-mid) var(--ease-smooth),
+    background var(--t-mid) var(--ease-smooth);
+}
+
+.soft-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--t-fast);
+}
+
+.soft-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-light), var(--shadow-float);
+}
+
+.soft-button:hover::after {
+  opacity: 1;
+}
+
+.soft-button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-inset);
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.95rem 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--t-fast) var(--ease-bounce),
+    box-shadow var(--t-mid) var(--ease-smooth),
+    filter var(--t-mid);
+}
+
+.primary-btn {
+  background: var(--gradient-btn);
+  color: #fff;
+  box-shadow:
+    0 8px 24px rgba(124, 58, 237, 0.32),
+    0 2px 8px rgba(124, 58, 237, 0.2);
+}
+
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+.primary-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent);
+  opacity: 0;
+  transition: opacity var(--t-fast);
+}
+
+.primary-btn:hover {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow:
+    0 16px 40px rgba(124, 58, 237, 0.42),
+    0 4px 12px rgba(124, 58, 237, 0.28),
+    var(--shadow-glow-accent);
+  filter: brightness(1.05);
+}
+
+.primary-btn:hover::after {
+  opacity: 1;
+}
+
+.primary-btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.secondary-btn {
+  background: var(--surface-strong);
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-light), var(--shadow-dark);
+}
+
+.secondary-btn:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: var(--shadow-light), var(--shadow-float);
+  background: var(--surface-hover);
+}
+
+.secondary-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: var(--shadow-inset);
+}
+
+/* Ripple effect helper */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple-anim 0.55s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ─── Section Spacing ───────────────────────────────────────────────── */
+.section-space {
+  padding: 1.5rem 0 0.5rem;
+}
+
+/* ─── Eyebrow labels ────────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-family: var(--font-display);
+}
+
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  background: var(--gradient-accent);
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+
+/* ─── Page layout ───────────────────────────────────────────────────── */
+.page-block {
+  padding: 2rem 0 4rem;
+  animation: fadeUp 0.5s var(--ease-smooth) both;
+}
+
+.page-heading {
+  margin-bottom: 1.5rem;
+}
+
+.page-heading h1,
+.section-head h2,
+.hero-copy h1 {
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.page-heading p,
+.section-head p,
+.hero-copy p,
+.benefit-card p,
+.footer-wrap p,
+.empty-state p {
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+/* ─── Gradient text ─────────────────────────────────────────────────── */
+.gradient-text {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ─── Badge ─────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--gradient-accent-soft);
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  color: var(--accent);
+}
+
+/* ─── Tooltip ───────────────────────────────────────────────────────── */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--surface-strong);
+  color: var(--text-main);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-float);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity var(--t-fast),
+    transform var(--t-fast);
+  backdrop-filter: var(--blur);
+  z-index: 100;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ─── Loading skeleton ──────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-strong) 25%,
+    var(--surface-hover) 50%,
+    var(--surface-strong) 75%
+  );
+  background-size: 400px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius-md);
+}
