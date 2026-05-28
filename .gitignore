@@ -1,8 +1,8 @@
 node_modules
 dist
-<<<<<<< HEAD
+
 .env
-=======
+
 .env
 .vercel
->>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
+.refact/
