@@ -20,6 +20,7 @@ import "./styles/login.css";
 import "./styles/toast.css";
 import "./styles/responsive.css";
 import "./styles/scrollToTop.css";
+import "./styles/legal.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

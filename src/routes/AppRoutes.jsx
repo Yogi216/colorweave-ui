@@ -5,6 +5,9 @@ import Explore from "../pages/Explore";
 import Favorites from "../pages/Favorites";
 import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsConditions from "../pages/TermsConditions";
+import RefundPolicy from "../pages/RefundPolicy";
 
 export default function AppRoutes() {
   return (
@@ -14,6 +17,9 @@ export default function AppRoutes() {
         <Route path="explore" element={<Explore />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="login" element={<Login />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
