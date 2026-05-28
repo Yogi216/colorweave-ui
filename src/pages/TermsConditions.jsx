@@ -58,12 +58,6 @@ export default function TermsConditions() {
           We may update these Terms at any time. Continued use of the platform
           means acceptance of updated terms.
         </p>
-
-        <h2>7. Contact</h2>
-
-        <p>
-          <strong>Email:</strong> support@colorweaveui.com
-        </p>
       </div>
     </section>
   );

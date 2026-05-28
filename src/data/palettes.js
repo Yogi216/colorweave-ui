@@ -1675,34 +1675,6 @@ const categoryConfigs = {
   },
 };
 
-// function generatePalettes() {
-//   const palettes = [];
-//   const startDate = new Date("2026-04-01");
-//   let id = 1;
-
-//   categories.forEach((category, categoryIndex) => {
-//     const { titles, pools } = categoryConfigs[category];
-
-//     for (let i = 0; i < 50; i++) {
-//       const date = new Date(startDate);
-//       date.setDate(startDate.getDate() + (categoryIndex * 50 + i));
-
-//       palettes.push({
-//         id: id++,
-//         title: titles[i],
-//         category,
-//         likes: 240 + ((categoryIndex * 47 + i * 29) % 620),
-//         createdAt: date.toISOString().split("T")[0],
-//         colors: pools[i % pools.length],
-//       });
-//     }
-//   });
-
-//   return palettes;
-// }
-
-// export const palettes = generatePalettes();
-
 function generatePalettes() {
   const palettes = [];
   const startDate = new Date("2026-04-01");

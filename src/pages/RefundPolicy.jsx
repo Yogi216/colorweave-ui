@@ -44,14 +44,6 @@ export default function RefundPolicy() {
         <h2>5. Payment Gateway</h2>
 
         <p>Payments are securely processed using Razorpay.</p>
-
-        <h2>6. Contact</h2>
-
-        <p>To request a refund, contact:</p>
-
-        <p>
-          <strong>Email:</strong> support@colorweaveui.com
-        </p>
       </div>
     </section>
   );

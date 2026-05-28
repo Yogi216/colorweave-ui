@@ -50,14 +50,6 @@ export default function PrivacyPolicy() {
           We may use trusted services including Supabase, Razorpay, analytics
           tools, and hosting providers.
         </p>
-
-        <h2>6. Contact</h2>
-
-        <p>For privacy-related questions, contact:</p>
-
-        <p>
-          <strong>Email:</strong> support@colorweaveui.com
-        </p>
       </div>
     </section>
   );

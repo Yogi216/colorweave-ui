@@ -109,7 +109,6 @@
     flex-direction: column;
   }
 
-<<<<<<< HEAD
   /* .toast {
     width: calc(100% - 2rem);
     justify-content: center;
@@ -123,8 +122,6 @@
     transform: translateX(0) translateY(0);
   } */
 
-=======
->>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
   .not-found-card {
     padding: 1.5rem;
     border-radius: 24px;
