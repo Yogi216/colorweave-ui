@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { useToast } from "../../context/ToastContext";
 
 // const iconMap = {
@@ -34,6 +35,8 @@
 //   );
 // }
 
+=======
+>>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
 import { useToast } from "../../context/ToastContext";
 
 const iconMap = {

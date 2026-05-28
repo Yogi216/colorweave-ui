@@ -237,11 +237,14 @@
 /* ─── Responsive Design ───────────────────────────────────────────── */
 /* Tablet - 768px */
 @media (max-width: 768px) {
+<<<<<<< HEAD
   /* .palette-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   } */
 
+=======
+>>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
   .palette-colors,
   .palette-color-block {
     min-height: 190px;

@@ -13,7 +13,11 @@
 }
 
 /* ─── Footer ────────────────────────────────────────────────────────── */
+
 /* .site-footer {
+
+.site-footer {
+
   padding: 1rem 0 1.8rem;
   animation: fadeUp 0.5s var(--ease-smooth) 0.3s both;
 }
@@ -70,6 +74,7 @@
   color: var(--text-main);
   background: var(--surface-strong);
   transform: translateY(-1px);
+
 } */
 
 /* ─── Footer ────────────────────────────────────────────────────────── */
@@ -205,6 +210,10 @@
   }
 } */
 
+=======
+}
+
+>>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
 /* ─── 404 page ──────────────────────────────────────────────────────── */
 .not-found-page {
   min-height: 70vh;
@@ -243,6 +252,7 @@
   animation: fadeUp 0.45s var(--ease-smooth) both;
 }
 
+
 /* ─── Toast / notification ──────────────────────────────────────────── */
 /* .toast {
   position: fixed;
@@ -277,3 +287,4 @@
 .toast-icon {
   font-size: 1rem;
 } */
+

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import useFavorites from "../../hooks/useFavorites";
 // import { useToast } from "../../context/ToastContext";
 
@@ -28,6 +29,8 @@
 //   );
 // }
 
+=======
+>>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
 import useFavorites from "../../hooks/useFavorites";
 
 export default function FavoriteButton({ palette }) {
@@ -46,4 +49,8 @@ export default function FavoriteButton({ palette }) {
       {active ? "♥ Saved" : "♡ Save"}
     </button>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9e51304b830b979c32a18e9432f1b6315eaf8ae9
